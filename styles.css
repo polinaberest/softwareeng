@@ -1,0 +1,45 @@
+*{
+    border:0 none;
+	outline:0;
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+.top, .top-second{
+    min-height: 30px;
+    background-color: blue;
+    margin: 0;
+}
+.top-second{
+    background-color: yellow;
+}
+.legend{
+    margin: 20px 100px;
+    padding: 15px;
+    border-left: 9px solid #000286;
+    border-radius: 6px;
+    background-color: aliceblue;
+}
+#map{
+    min-width: 700px;
+    min-height: 700px;
+}
+h1, h2, h3{
+    padding: 10px;
+    
+}
+.footer{
+    padding: 20px 0px;
+    background-image: linear-gradient(to right, #001f91 0%, yellow  51%, #000286  100%);
+    min-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: space-around;
+    margin-top: 30px;
+    
+}
+.footer h2, .white{
+    color: white;
+}

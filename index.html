@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивна карта бомбосховищ</title>
+    <link rel='stylesheet' type='text/css'  href='styles.css'>
+</head>
+<body>
+    <div class="top"></div>
+    <h1 style="text-align: center;">Карта бомбосховищ Холодногірського району</h1>
+    <div class="top-second">  </div>
+    <h3 style="text-align: center;"><i>Бережи себе - іди до укриття!</i></h3>
+    <div class="legend">   
+        <h3>Червоний маркер - бомбосховище</h3>
+        <h3>Помаранчевий маркер - магазин</h3>
+        <h3>?????????? маркер - підвал</h3>
+    </div>
+    <div id = "map">
+    </div>
+    <!--AIzaSyBOOvzY35xKZkuOzqR-pwsiEiBoHEp8UVg    мій ключ-->
+
+    <div class="footer">
+        <h2>Виникли питання?</h2>
+        <h3>E-mail для зв'язку з розробниками: <span class="white"> <i>bombshelters@gmail.com</i> </span><br><br>💙💛​​ Харків, UA</h3>
+    </div>
+
+    <script src='main.js'></script>
+
+    <!--у посиланні нижче встав свій ключ після key= та дуууже обережно підтверджуй платіжний аккаунт)-->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOvzY35xKZkuOzqR-pwsiEiBoHEp8UVg&callback=initMap">
+    </script>
+    
+</body>
+</html>
