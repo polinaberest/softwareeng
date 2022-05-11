@@ -6,14 +6,20 @@
 	box-sizing: border-box;
     font-family: Verdana, Tahoma, sans-serif;
 }
-.top, .top-second{
-    min-height: 30px;
-    background-color: blue;
-    margin: 0;
+
+header {
+    background-color: #0074BA;
+    padding: 1em 0.5em;
 }
-.top-second{
-    background-color: yellow;
+.title {
+    text-align: center;
+    color: #FCD53F;
 }
+.subtitle {
+    text-align: center;
+    color: #fff;
+}
+
 .legend{
     margin: 20px 100px;
     padding: 15px;
@@ -29,17 +35,18 @@ h1, h2, h3{
     padding: 10px;
     
 }
-.footer{
+footer{
     padding: 20px 0px;
-    background-image: linear-gradient(to right, #001f91 0%, yellow  51%, #000286  100%);
+    background: #0074BA;
+    /* background-image: linear-gradient(to right, #001f91 0%, yellow  51%, #000286  100%);
     min-width: 100%;
     display: flex;
     flex-flow: row nowrap;
 	align-items: stretch;
-	justify-content: space-around;
+	justify-content: space-around; */
     margin-top: 30px;
     
 }
-.footer h2, .white{
+footer h2, .white{
     color: white;
 }
