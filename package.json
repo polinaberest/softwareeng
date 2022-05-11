@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/NikoraDmytro/HTHM-Lab-3/issues"
   },
-  "homepage": "https://github.com/NikoraDmytro/HTHM-Lab-3#readme"
+  "homepage": "https://github.com/NikoraDmytro/HTHM-Lab-3#readme",
+  "dependencies": {
+    "load-google-maps-api": "^2.0.2"
+  }
 }

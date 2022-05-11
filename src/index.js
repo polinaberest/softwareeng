@@ -2,7 +2,7 @@ import { Main } from "./pages/Main";
 
 import "./styles.css";
 
-function app() {
+async function app() {
   Main();
 }
 

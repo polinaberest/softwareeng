@@ -50,7 +50,7 @@ module.exports = {
     port: 4000,
     compress: true,
   },
-  devtool: isDev ? "source-map" : false,
+  devtool: "source-map",
   optimization: {
     splitChunks: {
       chunks: "all",

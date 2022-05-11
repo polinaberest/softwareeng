@@ -1,10 +1,10 @@
 import template from "./index.html";
-import map from "utils/initMap";
+import initMap from "utils/initMap";
 
 import "./styles.scss";
 
 export const Main = () => {
-  document.body.innerHTML = template;
+  initMap();
 
-  window.initMap = map;
+  document.body.innerHTML = template;
 };
