@@ -70,10 +70,10 @@ function initMap() {
         infoBlock.open(map, markerBlock)
     })
     markerB.addListener("click", function(){ //НЕ ПРАЦЮЄ
-        infoB.open(map, infoB)
+        infoB.open(map, markerB)
     })
     markerS.addListener("click", function(){ //НЕ ПРАЦЮЄ
-        infoS.open(map, infoS)
+        infoS.open(map, markerS)
     })
 
     //далі - маркери магазинів (додати event listeners поля: гуманітарка - є-немає, графік роботи)
