@@ -1,0 +1,47 @@
+@use "shared/variables";
+
+header {
+  padding: 1em 0.5em;
+  background-color: variables.$header_back;
+}
+
+.title {
+  text-align: center;
+  color: variables.$title_color;
+}
+
+.subtitle {
+  text-align: center;
+  color: variables.$subtitle_color;
+}
+
+.legend {
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 100px;
+  border-left: 9px solid #000286;
+  background-color: variables.$legend_back;
+}
+
+#map {
+  min-width: 700px;
+  min-height: 700px;
+}
+
+h1,
+h2,
+h3 {
+  padding: 10px;
+}
+
+footer {
+  padding: 20px 0px;
+  background: variables.$footer_back;
+  /* background-image: linear-gradient(to right, #001f91 0%, yellow  51%, #000286  100%);
+    min-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: space-around; */
+  margin-top: 30px;
+}
