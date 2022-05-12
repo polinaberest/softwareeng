@@ -3,8 +3,22 @@
   --header_back: #0074ba;
   --legend_back: aliceblue;
 
+  --label_color: black;
   --title_color: #fcd53f;
   --subtitle_color: #fff;
+
+  --authorization_back: white;
+  --authorization_button_back: #037fcc;
+  --authorization_button_text_color: #ffefef;
+  --authorization_button_text_color_hover: yellow;
+  --authorization_button_text_color_active: rgb(255, 255, 128);
+  --authorization_button_back_hover: blue;
+  --authorization_button_back_active: rgb(0, 0, 134);
+
+  --authorization_input_border: #bdbdbd;
+  --authorization_input_border_error: #a30000;
+  --authorization_input_text_color: #212529;
+  --authorization_input_shadow_active: #011897;
 
   --ukrainian_back: linear-gradient(#2384ec 5%, #186ac2 20% 30%, #ffd500 80%);
 }

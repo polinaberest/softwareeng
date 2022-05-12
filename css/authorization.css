@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ukrainian_back);
+}
+
+form {
+  height: auto;
+  width: 900px;
+  padding: 32px;
+  display: flex;
+  max-width: 90vw;
+  flex-direction: column;
+  background-color: var(--authorization_back);
+}
+
+.error {
+  display: block;
+  margin-top: 10px;
+  color: rgb(255, 1, 1);
+}
+
+.input_field label {
+  display: block;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 1.25em;
+  color: var(--label_color);
+}
+
+.input_field input {
+  width: 75%;
+  display: inline;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 14px 8px;
+  border-radius: 5px;
+  transition: box-shadow 0.25s ease;
+  color: var(--authorization_input_text_color);
+  border: 1px solid var(--authorization_input_border);
+}
+
+.input_field input.error {
+  border-color: var(--authorization_input_border_error);
+}
+
+.input_field input:focus {
+  box-shadow: 0 -4px inset var(--authorization_input_shadow_active);
+}
+
+.phone_prefix {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--authorization_input_text_color);
+}
+
+.submit_button {
+  width: 250px;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 36px;
+  border-radius: 20px;
+  color: var(--authorization_button_text_color);
+  background-color: var(--authorization_button_back);
+}
+
+.submit_button:hover {
+  color: var(--authorization_button_text_color_hover);
+  background-color: var(--authorization_button_back_hover);
+}
+
+.submit_button:active {
+  color: var(--authorization_button_text_color_active);
+  background-color: var(--authorization_button_back_active);
+}

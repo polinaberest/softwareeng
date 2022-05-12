@@ -1,3 +1,13 @@
+const AUTH_STATE = {
+  ACCESS_GRANTED: "access granted",
+  ACCESS_DENIED: "access denied",
+};
+
+const shopIcon =
+  "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+const basementIcon =
+  "https://www.google.de/maps/vt/icon/name=assets/icons/poi/tactile/pinlet_outline_v4-2-medium.png,assets/icons/poi/tactile/pinlet_v4-2-medium.png,assets/icons/poi/quantum/pinlet/lodging_pinlet-2-medium.png&highlight=ec407a,f06292,ffffff?scale=1.5";
+
 const markers = [
   {
     building: "метро",
