@@ -1,0 +1,23 @@
+:root {
+  --footer_back: #0074ba;
+  --header_back: #0074ba;
+  --legend_back: aliceblue;
+
+  --title_color: #fcd53f;
+  --subtitle_color: #fff;
+
+  --ukrainian_back: linear-gradient(#2384ec 5%, #186ac2 20% 30%, #ffd500 80%);
+}
+
+* {
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}

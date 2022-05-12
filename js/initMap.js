@@ -1,29 +1,21 @@
-import loadGoogleMapsApi from "load-google-maps-api";
-
-import markers from "./markers.json";
-
 async function initMap() {
-  const googleMaps = await loadGoogleMapsApi({
-    key: "AIzaSyCUvdoXoG8eU_Lnhn6a8wUzVPHZD3aQano",
-  });
-
   //центр відображуваної карти - Холодногірське метро
   var opt = {
     center: { lat: 49.982614, lng: 36.180993 },
     zoom: 16,
   };
 
-  const map = new googleMaps.Map(document.getElementById("map"), opt); //уся карта
+  const map = new google.maps.Map(document.getElementById("map"), opt); //уся карта
 
   const createMarker = (props) => {
-    const markerMetro = new googleMaps.Marker({
+    const markerMetro = new google.maps.Marker({
       map: map,
       title: props.title,
       position: props.position,
       icon: props.icon || null,
     });
 
-    let info = new googleMaps.InfoWindow({
+    let info = new google.maps.InfoWindow({
       content: props.info,
     });
 
@@ -55,5 +47,3 @@ async function initMap() {
     });
   });
 }
-
-export default initMap;
