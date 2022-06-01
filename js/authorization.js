@@ -1,66 +1,104 @@
-const createError = (input, text) => {
-  const error = document.createElement("strong");
+class Authorization {
+  #error;
+  #phoneInput;
 
-  error.innerText = text;
-  error.className = "error";
+  constructor(form) {
+    this.#phoneInput = form.elements.phone;
 
-  input.classList.add("error");
-  input.insertAdjacentElement("afterend", error);
-};
+    this.#error = document.createElement("strong");
+    this.#error.className = "error";
 
-const removeError = () => {
-  const errors = document.querySelectorAll("strong.error");
-  const inputs = document.querySelectorAll("input.error");
+    this.showError = this.showError.bind(this);
+    this.hideError = this.hideError.bind(this);
+    this.validate = this.validate.bind(this);
+    this.grantAccess = this.grantAccess.bind(this);
+    this.denyAccess = this.denyAccess.bind(this);
+  }
 
-  inputs.forEach((input) => input.classList.remove("error"));
-  errors.forEach((error) => error.remove());
-};
+  showError(errorMessage) {
+    this.#error.innerText = errorMessage;
+    this.#phoneInput.insertAdjacentElement("afterend", this.#error);
+  }
 
-window.addEventListener("click", removeError);
+  hideError() {
+    this.#error.remove();
+  }
 
-function authorization() {
-  const form = document.forms[0];
+  validate() {
+    const value = this.#phoneInput.value;
+
+    const phone = value.replace(/ |-|\(|\)/g, "");
+
+    const prefix = phone.slice(0, -10);
+    const phoneWithNoPrefix = phone.slice(-10);
+
+    console.log(prefix, phoneWithNoPrefix);
+
+    const regexp = /^\d{10}$/;
+
+    if (!value) {
+      this.showError("Поле обов'якове!");
+      return false;
+    }
+    if (!prefix) {
+      this.showError("Введіть повний номер телефону");
+      return false;
+    }
+    if (!regexp.test(phoneWithNoPrefix)) {
+      this.showError(
+        "Будь ласка переконайтеся, що ввели правильний номер телефону"
+      );
+      return false;
+    }
+    if (value[0] == "7") {
+      this.denyAccess();
+      return false;
+    }
+
+    return true;
+  }
+
+  denyAccess() {
+    window.localStorage.setItem("auth", AUTH_STATE.ACCESS_DENIED);
+
+    window.location.pathname = window.location.pathname.replace(
+      PAGES.AUTHORIZATION,
+      PAGES.MOSCAL_ALERT
+    );
+  }
+
+  grantAccess() {
+    window.localStorage.setItem("auth", AUTH_STATE.ACCESS_GRANTED);
+
+    window.location.pathname = window.location.pathname.replace(
+      PAGES.AUTHORIZATION,
+      PAGES.MAIN
+    );
+  }
+}
+
+function main() {
   const auth = window.localStorage.getItem("auth");
 
   if (auth == AUTH_STATE.ACCESS_DENIED) {
-    document.location.pathname = "moscalAlert.html";
+    window.location.pathname = window.location.pathname.replace(
+      PAGES.AUTHORIZATION,
+      PAGES.MOSCAL_ALERT
+    );
   }
+
+  const form = document.forms[0];
+  const authorization = new Authorization(form);
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const phoneInput = form.elements.phone;
-    const phone = phoneInput.value;
-
-    const prefix = phone.slice(0, -10);
-    const phoneNumber = phone.slice(-10);
-
-    const regexp = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-
-    if (!phone) {
-      createError(phoneInput, "Поле обов'якове!");
-      return;
+    if (authorization.validate()) {
+      authorization.grantAccess();
     }
-    if (!prefix) {
-      createError(phoneInput, "Введіть повний номер телефону");
-      return;
-    }
-    if (!regexp.test(phoneNumber)) {
-      createError(
-        phoneInput,
-        "Будь ласка переконайтеся, що ввели правильний номер телефону"
-      );
-      return;
-    }
-
-    if (prefix == "7") {
-      window.localStorage.setItem("auth", AUTH_STATE.ACCESS_DENIED);
-    } else {
-      window.localStorage.setItem("auth", AUTH_STATE.ACCESS_GRANTED);
-    }
-
-    window.location.pathname = "index.html";
   });
+
+  window.addEventListener("click", authorization.hideError());
 }
 
-authorization();
+main();

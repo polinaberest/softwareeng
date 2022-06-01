@@ -3,6 +3,12 @@ const AUTH_STATE = {
   ACCESS_DENIED: "access denied",
 };
 
+const PAGES = {
+  MAIN: "index.html",
+  AUTHORIZATION: "authorization.html",
+  MOSCAL_ALERT: "moscalAlert.html",
+};
+
 const shopIcon =
   "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 const basementIcon =
