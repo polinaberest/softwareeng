@@ -21,6 +21,12 @@ header {
   background-color: var(--legend_back);
 }
 
+.btn-warning
+{
+  padding: 15px;
+  margin: 20px 100px;
+}
+
 #map {
   min-width: 700px;
   min-height: 700px;
