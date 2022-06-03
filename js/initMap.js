@@ -11,8 +11,8 @@ async function initMap() {
 
   getUserLocation();
   var btn = document.getElementById("locationBtn");
-  btn.onclick = getUserLocation; 
-  
+  btn.onclick = getUserLocation;
+
   const createMarker = (props) => {
     const markerMetro = new google.maps.Marker({
       map: map,
@@ -48,35 +48,33 @@ async function initMap() {
     });
   });
 
-//Знаходження та відмитка юзера на карті(Автоматично робе фокус на домівки користувача)
-function getUserLocation()
-  {
-  navigator.geolocation.getCurrentPosition(
-    function geolocationSuccess(position) {
-      var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  //Знаходження та відмитка юзера на карті(Автоматично робе фокус на домівки користувача)
+  function getUserLocation() {
+      navigator.geolocation.getCurrentPosition(
+        function geolocationSuccess(position) {
+          var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          userPosition = { lat: position.coords.latitude, lng: position.coords.longitude };
+          var userIcon =
+          {
+            url: "https://icon-library.com/images/small-home-icon/small-home-icon-14.jpg",
+            scaledSize: new google.maps.Size(40, 40)
+          };
 
-      var userIcon =
-      {
-        url: "https://icon-library.com/images/small-home-icon/small-home-icon-14.jpg", 
-        scaledSize: new google.maps.Size(40, 40)
-      };
+          createMarker({
+            position: {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            },
+            title: "Ви",
+            info: "<h3>Ваша домівка</h3><p>Відчинено: тільки для вас<br></p>",
+            icon: userIcon,
+          });
 
-      createMarker({
-        position: {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          map.setCenter(location);
         },
-        title: "Ви",
-        info: "<h3>Ваша домівка</h3><p>Відчинено: тільки для вас<br></p>",
-        icon: userIcon,
-      });
-
-      map.setCenter(location);
-    },
-    function geolocationFailed(position)
-    {
-      alert("Не вдалося отримати вашу геолокацію")
-    });
+        function geolocationFailed(position) {
+          alert("Не вдалося отримати вашу геолокацію")
+        });
   }
 
 }

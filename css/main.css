@@ -21,10 +21,24 @@ header {
   background-color: var(--legend_back);
 }
 
-.btn-warning
-{
-  padding: 15px;
-  margin: 20px 100px;
+.btn-grad {
+  background-image: linear-gradient(to right, #0074ba 0%, #fcf000  51%, #0074ba 100%);
+  margin:20px 100px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 #map {
